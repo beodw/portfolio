@@ -1,0 +1,112 @@
+{
+    "basic_info": {
+      "description_header": "Hi",
+      "description": "👋 I'm Beod Wilson, an intermediate full-stack web and mobile developer with experience developing banking and social media style applications and a love for fun intuitive user interfaces.\nI have led developement teams in building software for medium-sized businesses, and a company portal for one of the biggest banks in my country, using modern web and cross-paltform mobile technologies like React, Flutter, Vue, Django and Node JS.\nI look forward to creating something amazing with you.",
+      "section_name": {
+        "about": "About me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "experience": "Experience"
+      }
+    },
+    "projects": [
+      {
+        "title": "Rokel Company Portal",
+        "startDate": "2021",
+        "description": "Developed a company wide portal containing multiple applications used to capture and process data such as printed statements, total daily transactions per branch and assets purchased by the company.",
+        "images": [
+          "images/portfolio/animal-shelter/p1.jpg",
+          "images/portfolio/animal-shelter/p2.jpg"
+        ],
+        "url": "",
+        "technologies": [
+          {
+            "class": "devicon-django-plain",
+            "name": "Django"
+          },
+          {
+            "class": "devicon-react-plain",
+            "name": "React"
+          },
+          {
+            "class": "devicon-jquery-plain",
+            "name": "Jquery"
+          }
+        ]
+      },
+      {
+        "title": "Enterprise Software",
+        "startDate": "2021-2022",
+        "description": "Developed the front-end of an enterprise software package for small and medium sized businesses using React. Functionalities include sales management, such as receipt and invoice generation, human resource management and more.",
+        "images": [
+          "images/erp2.jpeg",
+          "images/portfolio/photography/p2.jpg"
+        ],
+      
+        "technologies": [
+          {
+            "class": "devicon-react-original",
+            "name": "React"
+          },
+          {
+            "class": "devicon-javascript-plain",
+            "name": "JavaScript"
+          }
+        ]
+      },
+      {
+        "title": "Food Ordering App",
+        "startDate": "2021",
+        "description": "A food ordering app project built with Flutter and Firebase. An intuitive and beautiful user interface was visualized using figma  and subsequently implemented.",
+        "images": [
+          "images/foodApp.png",
+          "images/portfolio/adventure/p2.jpg"
+        ],
+       
+        "technologies": [
+          {
+            "class": "devicon-laravel-plain",
+            "name": "Laravel"
+          },
+          {
+            "class": "devicon-vuejs-plain",
+            "name": "Vue JS"
+          }
+         
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Rokel Commercial Bank",
+        "title": "Full Stack Developer",
+        "years": "08/2020 - 12/2021",
+        "mainTech": [
+          "Django",
+          "React"
+        ],
+        "technologies": [
+          "REST API",
+          "JavaScript",
+          "Bootstrap",
+          "Python",
+          "Material Design"
+        ]
+      },
+      {
+        "company": "Sprint Mind Delivery",
+        "title": "Front-End Devloper",
+        "years": "01.2019 - 07.2020",
+        "mainTech": [
+          "Apache Cordova",
+          "Node JS"
+        ],
+        "technologies": [
+          "HTML5",
+          "Bootstrap",
+          "JavaScript",
+          "Jquery"
+        ]
+      }
+    ]
+  }

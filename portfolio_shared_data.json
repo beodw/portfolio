@@ -1,0 +1,70 @@
+{
+    "basic_info": {
+      "name": "Beod Wilson",
+      "titles": [ "Full Stack Developer", "Web Developer", "Project Lead", "Mobile App Developer" ],
+      "social": [
+        {
+          "name": "github",
+          "url": "https://github.com/beodw",
+          "class": "fab fa-github"
+        }
+       
+      ],
+      "image": "me.png"
+    },
+    "skills": {
+      "icons": [
+        {
+          "name": "HTML 5",
+          "class": "devicon-html5-plain",
+          "level": "95"
+        },
+
+        {
+          "name": "Bootstrap",
+          "class": "devicon-bootstrap-plain",
+          "level": "85"
+        },
+
+        {
+          "name": "Sass",
+          "class": "devicon-sass-original",
+          "level": "75"
+        },
+      
+        {
+          "name": "React",
+          "class": "devicon-react-plain",
+          "level": "90"
+        },
+
+
+        {
+          "name": "Flutter",
+          "class": "devicon-flutter-plain",
+          "level": "65"
+        },
+
+        {
+          "name": "Vue",
+          "class": "devicon-vuejs-plain",
+          "level": "65"
+        },
+
+
+        {
+          "name": "Node JS",
+          "class": "devicon-nodejs-plain",
+          "level": "90"
+        },
+      
+      
+
+        {
+          "name": "Django",
+          "class": "devicon-django-plain",
+          "level": "60"
+        }
+      ]
+    }
+  }
