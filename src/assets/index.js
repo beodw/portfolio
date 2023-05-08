@@ -36,6 +36,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import click from "./audio/click.mp3";
+
 export {
   TMS,
   simSwapPortal,
@@ -71,4 +73,5 @@ export {
   tripguide,
   loadAndGoSite,
   TMSMobileApp,
+  click,
 };

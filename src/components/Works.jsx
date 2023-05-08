@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
+import { click } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -16,15 +17,21 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+  const clickSound = new Audio(click);
+  const playSound = () => {
+
+    clickSound.play();
+
+  }
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div onClick={playSound} variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full hover:scale-110 hover:cursor-pointer duration-150'
       >
         <div className='relative w-full h-[230px]'>
           <img
