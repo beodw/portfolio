@@ -1,8 +1,15 @@
-import React, {useEffect} from "react";
+import React, {Suspense, useEffect} from "react";
+import { lazy } from "react";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+const StarsCanvas = lazy(()=> import("./components/canvas/Stars"));
+const About = lazy(()=> import("./components/About"));
+const Contact = lazy(()=> import("./components/Contact"));
+const Hero = lazy(()=> import("./components/Hero"));
+const Navbar = lazy(()=> import("./components/Navbar"));
+const Works = lazy(()=> import("./components/Works"));
 
 const App = () => {
+
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -17,13 +24,15 @@ const App = () => {
         </div>
         <Works />
         <About />
-        {/* <Experience /> */}
-        {/* <Tech /> */}
-     
-        {/* <Feedbacks /> */}
         <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
+           <Suspense fallback={<div>loading..</div>}>
+              <Contact />
+          </Suspense>
+         
+          <Suspense fallback={<div>loading..</div>}>
+              <StarsCanvas />
+          </Suspense>
+  
         </div>
       </div>
   );
