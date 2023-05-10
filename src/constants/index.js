@@ -122,7 +122,7 @@ const technologies = [
 const experiences = [
   {
     title: "React.js Developer",
-    company_name: "Starbucks",
+    company_name: "MTN",
     icon: starbucks,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
@@ -205,7 +205,7 @@ const projects = [
   {
     name: "MTN Business Hub CMS",
     description:
-      "Web based CMS used to manage products and services, by product team, offered in corresponding ecommerce site.",
+      "Led development and integration of RESTful API to the dashboard and manage products pages on the  CMS. Liasesed with product owner and product team to understand features and implement pixel perfect UI.",
     tags: [
       {
         name: "react",
@@ -224,9 +224,9 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "MTN Business Hub Customer",
+    name: "MTN Customer Portal",
     description:
-      "Web based E-commerce store for a corresponing E-commerce platform that allows customers to buy physical and virtual internet products including bundles and routers.",
+      "Responsible for integrating payment via Visa and MasterCard including UI and incorporating RESTful endpoints. Liased with payment provider to understand security protocols and ensure best practices.",
     tags: [
       {
         name: "react",
@@ -246,8 +246,7 @@ const projects = [
   },
   {
     name: "MTN Self Service Portal",
-    description:
-      "Web-based platform that allows users to request for sim replacement without physically being present in an MTN office..",
+    description: "Worked with UI designer to implement backend user",
     tags: [
       {
         name: "react",
