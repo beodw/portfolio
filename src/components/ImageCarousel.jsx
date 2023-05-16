@@ -26,6 +26,7 @@ function ImageCarousel({ images }) {
         requestToChangeActive={(value) => setActiveItemIndex(value)}
         rightChevron={">"}
         leftChevron={"<"}
+        sliderWidth={400}
       >
         {appState.showCasedProject.carousel_images.map((img, index) => (
           <img

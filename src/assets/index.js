@@ -1,4 +1,4 @@
-import profilePicture from "./profilePicture.png";
+import profilePicture from "./personal_pic/profilePicture.png";
 import businessHub from "./businessHub.png";
 import loadAndGoSite from "./loadAndGoSite.png";
 import businessHubShop from "./businessHub.png";

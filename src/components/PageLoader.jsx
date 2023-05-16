@@ -2,7 +2,7 @@ import React from "react";
 
 function PageLoader() {
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
+    <div className="h-screen w-screen flex justify-center items-center bg-tertiary">
       <div role="status" className="flex flex-col items-center">
         <svg
           aria-hidden="true"

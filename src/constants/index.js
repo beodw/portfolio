@@ -30,6 +30,38 @@ import {
   TMSMobileApp,
 } from "../assets";
 
+import {
+  businessHubAddAttribute,
+  businessHubDashboard,
+  businessHubImageUpload,
+} from "../assets/business_hub";
+
+import {
+  LastRecharge,
+  SimActivationDate,
+  Success,
+} from "../assets/sim_swap_portal";
+
+import { Email, Login, Map, Orders } from "../assets/loadAndGoTms";
+
+import {
+  Blog,
+  LandingPage,
+  Offerings,
+  Pricing,
+  QA,
+  SoftwareOfferings,
+} from "../assets/loadAndWebsite";
+
+import {
+  Congratulations,
+  LoginLnGMobile,
+  OrdersLnGMobile,
+  Schedule,
+  SelectRole,
+  Settings,
+} from "../assets/loadAndGoMobile";
+
 export const navLinks = [
   {
     id: "projects",
@@ -205,7 +237,7 @@ const projects = [
   {
     name: "MTN Business Hub CMS",
     description:
-      "Led development and integration of RESTful API to the dashboard and manage products pages on the  CMS. Liasesed with product owner and product team to understand features and implement pixel perfect UI.",
+      "Led development and integration of RESTful API to the dashboard and manage products pages on the CMS. Liasesed with product owner and product team to understand features and implement pixel perfect UI.",
     tags: [
       {
         name: "react",
@@ -221,12 +253,16 @@ const projects = [
       },
     ],
     image: businessHub,
-    source_code_link: "https://github.com/",
+    carousel_images: [
+      businessHubAddAttribute,
+      businessHubDashboard,
+      businessHubImageUpload,
+    ],
   },
   {
     name: "MTN Customer Portal",
     description:
-      "Responsible for integrating payment via Visa and MasterCard including UI and incorporating RESTful endpoints. Liased with payment provider to understand security protocols and ensure best practices.",
+      "Responsible for designing and implment payment microservice to process Visa and MasterCard payments on our platform. Liased with payment provider to understand security protocols and ensure best practices.",
     tags: [
       {
         name: "react",
@@ -242,7 +278,7 @@ const projects = [
       },
     ],
     image: businessHubShop,
-    source_code_link: "https://github.com/",
+    carousel_images: [],
   },
   {
     name: "MTN Self Service Portal",
@@ -262,7 +298,7 @@ const projects = [
       },
     ],
     image: simSwapPortal,
-    source_code_link: "https://github.com/",
+    carousel_images: [LastRecharge, SimActivationDate, Success],
   },
   {
     name: "Transport Management System",
@@ -286,8 +322,10 @@ const projects = [
         color: "green-text-gradient",
       },
     ],
-    image: TMS,
-    source_code_link: "https://github.com/",
+    image: Login,
+    source_code_link: "https://github.com/beodw/LoadAndGo",
+    carousel_images: [Map, Orders, Login, Email],
+    liveSiteLink: "https://att.lng.com.sg/#login",
   },
   {
     name: "Load And Go Site",
@@ -308,7 +346,16 @@ const projects = [
       },
     ],
     image: loadAndGoSite,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/beodw/LoadAndGo",
+    carousel_images: [
+      Blog,
+      LandingPage,
+      Offerings,
+      Pricing,
+      QA,
+      SoftwareOfferings,
+    ],
+    liveSiteLink: "https:lng.com.sg",
   },
   {
     name: "TMS Mobile App",
@@ -330,6 +377,14 @@ const projects = [
     ],
     image: TMSMobileApp,
     source_code_link: "https://github.com/",
+    carousel_images: [
+      Congratulations,
+      LoginLnGMobile,
+      OrdersLnGMobile,
+      Schedule,
+      SelectRole,
+      Settings,
+    ],
   },
 ];
 

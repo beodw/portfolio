@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   modalIsVisible: false,
+  scrollDist: 0,
   showCasedProject: {
     name: "",
     description: "",
@@ -17,6 +18,9 @@ const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
+    setScrollDistance: (state, action) => {
+      state.scrollDist = action.payload;
+    },
     setModalVisible: (state, action) => {
       state.modalIsVisible = action.payload;
     },
@@ -26,5 +30,6 @@ const appSlice = createSlice({
   },
 });
 
-export const { setModalVisible, setShowCasedProject } = appSlice.actions;
+export const { setModalVisible, setShowCasedProject, setScrollDistance } =
+  appSlice.actions;
 export default appSlice.reducer;

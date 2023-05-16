@@ -2,7 +2,8 @@ import React, { Suspense, lazy, useEffect } from "react";
 import RenderIfVisible from "react-render-if-visible";
 import { PageLoader } from "./components";
 import { navigateToProjects } from "./utils/navigate";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setScrollDistance } from "../src/redux/app/appSlice";
 
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 const About = lazy(() => import("./components/About"));
@@ -14,18 +15,25 @@ const ProjectModal = lazy(() => import("./components/ProjectModal"));
 
 const App = () => {
   const appState = useSelector((state) => state.app);
+  const dispatch = useDispatch();
 
   //useEffect to click projects link after page load.
   useEffect(() => {
+    window.addEventListener("scroll", function (e) {
+      let scrollDist = document.getElementsByTagName("html")[0].scrollTop;
+      dispatch(setScrollDistance(scrollDist));
+    });
     setTimeout(() => {
-      navigateToProjects();
+      // navigateToProjects();
     }, 3000);
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      navigateToProjects();
-    }, 1000);
+      appState.scrollDist &&
+        appState.scrollDist > 0 &&
+        window.scroll(0, appState.scrollDist);
+    }, 2000);
   }, [appState.modalIsVisible]);
 
   return (
