@@ -24,12 +24,13 @@ const App = () => {
       dispatch(setScrollDistance(scrollDist));
     });
     setTimeout(() => {
-      // navigateToProjects();
+      navigateToProjects();
     }, 3000);
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
+      // navigateToProjects();
       appState.scrollDist &&
         appState.scrollDist > 0 &&
         window.scroll(0, appState.scrollDist);
