@@ -4,6 +4,7 @@ import OrdersLnGMobile from "./Orders.png";
 import Schedule from "./Schedule.png";
 import SelectRole from "./SelectRole.png";
 import Settings from "./Settings.png";
+import TMSMobileApp from "./TMSMobileApp.png";
 
 export {
   Congratulations,
@@ -12,4 +13,5 @@ export {
   Schedule,
   SelectRole,
   Settings,
+  TMSMobileApp,
 };
