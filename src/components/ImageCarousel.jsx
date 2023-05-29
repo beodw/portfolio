@@ -17,8 +17,8 @@ function ImageCarousel({ images }) {
         chevronWidth={60}
         disableSwipe={false}
         alwaysShowChevrons={false}
-        numberOfCards={1}
-        slidesToScroll={2}
+        numberOfCards={2}
+        slidesToScroll={1}
         outsideChevron={true}
         showSlither={false}
         firstAndLastGutter={false}
