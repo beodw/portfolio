@@ -73,37 +73,41 @@ export default function ProjectModal() {
         <div className="mt-5">
           <h3>Project Links:</h3>
           <div className="flex">
-            <div className="flex flex-col items-start m-3 card-img_hover">
-              <div
-                onClick={() => {
-                  window.open(appState.showCasedProject.source_code_link);
-                }}
-                className="mb-2 bg-green-500 shadow-lg w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              >
-                <img
-                  src={github}
-                  alt="source code"
-                  className="w-1/2 h-1/2 object-contain"
-                />
+            {appState.showCasedProject.source_code_link && (
+              <div className="flex flex-col items-start m-3 card-img_hover">
+                <div
+                  onClick={() => {
+                    window.open(appState.showCasedProject.source_code_link);
+                  }}
+                  className="mb-2 bg-green-500 shadow-lg w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={github}
+                    alt="source code"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+                <small>GitHub</small>
               </div>
-              <small>GitHub</small>
-            </div>
+            )}
 
-            <div className="flex flex-col items-start m-3 card-img_hover">
-              <div
-                onClick={() => {
-                  window.open(appState.showCasedProject.liveSiteLink);
-                }}
-                className="mb-2 black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              >
-                <img
-                  src={website}
-                  alt="website link"
-                  className="w-1/2 h-1/2 object-contain"
-                />
+            {appState.showCasedProject.liveSiteLink && (
+              <div className="flex flex-col items-start m-3 card-img_hover">
+                <div
+                  onClick={() => {
+                    window.open(appState.showCasedProject.liveSiteLink);
+                  }}
+                  className="mb-2 black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={website}
+                    alt="website link"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+                <small>Live Site</small>
               </div>
-              <small>Live Site</small>
-            </div>
+            )}
           </div>
 
           <h3 className="text-white font-bold text-[24px]">

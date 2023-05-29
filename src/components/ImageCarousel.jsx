@@ -17,8 +17,8 @@ function ImageCarousel({ images }) {
         chevronWidth={60}
         disableSwipe={false}
         alwaysShowChevrons={false}
-        numberOfCards={1}
-        slidesToScroll={2}
+        numberOfCards={2}
+        slidesToScroll={1}
         outsideChevron={true}
         showSlither={false}
         firstAndLastGutter={false}
@@ -26,6 +26,7 @@ function ImageCarousel({ images }) {
         requestToChangeActive={(value) => setActiveItemIndex(value)}
         rightChevron={">"}
         leftChevron={"<"}
+        sliderWidth={400}
       >
         {appState.showCasedProject.carousel_images.map((img, index) => (
           <img
