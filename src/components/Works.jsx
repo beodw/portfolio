@@ -102,9 +102,9 @@ const Works = ({ setModal }) => {
       <div className="w-full flex">
         Following projects showcases my skills and experience through some
         interesting projects I've woked on. Each project is briefly described
-        with links to code repositories and live demos in it. It reflects my
-        ability to solve complex problems, work with different technologies, and
-        manage projects effectively.
+        with links to the live sites. It reflects my
+        ability to create world class web applications, work with in a variety of industries, and
+        manage projects to completion.
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">

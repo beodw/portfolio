@@ -8,60 +8,93 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const [loading, setLoading] = useState(false);
+  const [submittingForm, setSubmittingForm] = useState(false);
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+  const email = document.getElementById('emailInput');
+  const name = document.getElementById('nameInput');
+  const message = document.getElementById('messageInput');
 
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
+  const formIsValid = () => {
+    let isValid = true;
+
+    if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value.trim())){
+      email.classList.remove('border-none');
+      email.classList.add('border');
+      email.classList.add('border-red-700');
+      isValid = false;
+    }
+
+    if(name.value.trim().length == 0){
+      name.classList.remove('border-none');
+      name.classList.add('border');
+      name.classList.add('border-red-700');
+      isValid = false;
+    }
+
+     if(message.value.trim().length == 0){
+      message.classList.remove('border-none');
+      message.classList.add('border');
+      message.classList.add('border-red-700');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  const resetForm = () => {
+    email.value = ""
+    name.value = ""
+    message.value = ""
+  }
+
+  const removeErroClasses = () => {
+      email.classList.remove('border');
+      email.classList.remove('border-red-700');
+      email.classList.add('border-none');
+
+      name.classList.remove('border');
+      name.classList.remove('border-red-700');
+      name.classList.add('border-none');
+
+      message.classList.remove('border');
+      message.classList.remove('border-red-700');
+      message.classList.add('border-none');
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    if(!formIsValid()) {
+      alert('Form is invalid. Please check all fields.')
+      return
+    };
 
+    removeErroClasses();
+    
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
+          from_name: name.value,
+          to_name: "Beod Wilson",
+          from_email: email.value,
+          to_email: "beodwilson@gmail.com",
+          message: message.value,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
-          setLoading(false);
           alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
+          resetForm();
+        }
+      ).catch((error) => {
           console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
+          alert("Oh no, something went wrong 🙁. Please try again.");
         }
       );
+
   };
 
   return (
@@ -77,49 +110,46 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          ref={formRef}
-          onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
+              id="nameInput"
               type="text"
               name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your full name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your email</span>
             <input
+              id="emailInput"
               type="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
+              required
+              placeholder="What's your email address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
+              id="messageInput"
               rows={7}
               name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What you want to say?"
+              placeholder="What do you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
 
           <button
-            type="submit"
+          onClick={handleSubmit}
+            type="button"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
-            {loading ? "Sending..." : "Send"}
+            {submittingForm ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>

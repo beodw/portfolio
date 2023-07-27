@@ -73,7 +73,7 @@ export default function ProjectModal() {
         <div className="mt-5">
           <h3>Project Links:</h3>
           <div className="flex">
-            {appState.showCasedProject.source_code_link && (
+            {/* {appState.showCasedProject.source_code_link && (
               <div className="flex flex-col items-start m-3 card-img_hover">
                 <div
                   onClick={() => {
@@ -89,7 +89,7 @@ export default function ProjectModal() {
                 </div>
                 <small>GitHub</small>
               </div>
-            )}
+            )} */}
 
             {appState.showCasedProject.liveSiteLink && (
               <div className="flex flex-col items-start m-3 card-img_hover">

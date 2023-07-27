@@ -17,27 +17,35 @@ const App = () => {
   const appState = useSelector((state) => state.app);
   const dispatch = useDispatch();
 
+
+
   //scroll to projects on initial page load.
-  useEffect(() => {
-    setTimeout(() => {
-      navigateToProjects();
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  //   function listenForDocReady(e) {
+  //     if(document.readyState == 'complete'){
+  //       navigateToProjects();
+  //     }
+  //   }
+  //   document.addEventListener('readystatechange', listenForDocReady);
+  //   return () =>{
+  //     document.removeEventListener('readystatechange', listenForDocReady, true);
+  //   }
+  // }, []);
 
   //useEffect to click projects link after page load.
-  useEffect(() => {
-    window.addEventListener("scroll", function (e) {
-      let scrollDist = document.getElementsByTagName("html")[0].scrollTop;
-      dispatch(setScrollDistance(scrollDist));
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", function (e) {
+  //     let scrollDist = document.getElementsByTagName("html")[0].scrollTop;
+  //     dispatch(setScrollDistance(scrollDist));
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (appState.scrollDist && appState.scrollDist > 0)
-        window.scroll(0, appState.scrollDist);
-    }, 2000);
-  }, [appState.modalIsVisible]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (appState.scrollDist && appState.scrollDist > 0)
+  //       window.scroll(0, appState.scrollDist);
+  //   }, 2000);
+  // }, [appState.modalIsVisible]);
 
   return (
     <Suspense fallback={<PageLoader />}>

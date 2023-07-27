@@ -53,15 +53,15 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Systems Designer",
     icon: web,
   },
   {
-    title: "Flutter Developer",
+    title: "Frontend Engineer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Engineer",
     icon: backend,
   },
   {
@@ -136,6 +136,8 @@ const projects = [
     ],
     image: simSwapPortal,
     carousel_images: [LastRecharge, SimActivationDate, Success],
+    liveSiteLink: "https://internalappstest.mtn.com.gh/",
+
   },
   {
     name: "Transport Management System",
@@ -200,7 +202,7 @@ const projects = [
       "Corresponding mobile app for drivers and riders to fulfill delviery. Including, map integration, barcode scanning of packages and GPS navigation.",
     tags: [
       {
-        name: "Flutter",
+        name: "React",
         color: "blue-text-gradient",
       },
       {

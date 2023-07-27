@@ -47,8 +47,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in React, Python, Laravel, .Net Core and Flutter.
+        I'm a skilled software engineer with experience working remotely in 
+        agile teams accross the world.
         I'm a quick learner that loves a good challenge and making efficient, 
         scalable, and user-friendly solutions. Let's work together to bring your ideas to life!
       </motion.p>
