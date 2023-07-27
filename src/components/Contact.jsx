@@ -11,31 +11,31 @@ const Contact = () => {
 
   const [submittingForm, setSubmittingForm] = useState(false);
 
-  const email = document.getElementById('emailInput');
-  const name = document.getElementById('nameInput');
-  const message = document.getElementById('messageInput');
+  const email = useRef(null);
+  const name = useRef(null);
+  const message = useRef(null);
 
   const formIsValid = () => {
     let isValid = true;
 
-    if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value.trim())){
-      email.classList.remove('border-none');
-      email.classList.add('border');
-      email.classList.add('border-red-700');
+    if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.current.value.trim())){
+      email.current.classList.remove('border-none');
+      email.current.classList.add('border');
+      email.current.classList.add('border-red-700');
       isValid = false;
     }
 
-    if(name.value.trim().length == 0){
-      name.classList.remove('border-none');
-      name.classList.add('border');
-      name.classList.add('border-red-700');
+    if(name.current.value.trim().length == 0){
+      name.current.classList.remove('border-none');
+      name.current.classList.add('border');
+      name.current.classList.add('border-red-700');
       isValid = false;
     }
 
-     if(message.value.trim().length == 0){
-      message.classList.remove('border-none');
-      message.classList.add('border');
-      message.classList.add('border-red-700');
+     if(message.current.value.trim().length == 0){
+      message.current.classList.remove('border-none');
+      message.current.classList.add('border');
+      message.current.classList.add('border-red-700');
       isValid = false;
     }
 
@@ -43,23 +43,23 @@ const Contact = () => {
   }
 
   const resetForm = () => {
-    email.value = ""
-    name.value = ""
-    message.value = ""
+    email.current.value = ""
+    name.current.value = ""
+    message.current.value = ""
   }
 
   const removeErroClasses = () => {
-      email.classList.remove('border');
-      email.classList.remove('border-red-700');
-      email.classList.add('border-none');
+      email.current.classList.remove('border');
+      email.current.classList.remove('border-red-700');
+      email.current.classList.add('border-none');
 
-      name.classList.remove('border');
-      name.classList.remove('border-red-700');
-      name.classList.add('border-none');
+      name.current.classList.remove('border');
+      name.current.classList.remove('border-red-700');
+      name.current.classList.add('border-none');
 
-      message.classList.remove('border');
-      message.classList.remove('border-red-700');
-      message.classList.add('border-none');
+      message.current.classList.remove('border');
+      message.current.classList.remove('border-red-700');
+      message.current.classList.add('border-none');
   }
 
   const handleSubmit = (e) => {
@@ -73,16 +73,16 @@ const Contact = () => {
     
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_APP_EMAIL.currentJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAIL.currentJS_TEMPLATE_ID,
         {
-          from_name: name.value,
+          from_name: name.current.value,
           to_name: "Beod Wilson",
-          from_email: email.value,
+          from_email: email.current.value,
           to_email: "beodwilson@gmail.com",
-          message: message.value,
+          message: message.current.value,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAIL.currentJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -115,28 +115,29 @@ const Contact = () => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
-              id="nameInput"
+              ref={name}
+              id="name"
               type="text"
               name="name"
-              placeholder="What's your full name?"
+              placeholder="What's your full name.current?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
+            <span className="text-white font-medium mb-4">Your email.current</span>
             <input
-              id="emailInput"
+              ref={email}
               type="email"
               name="email"
               required
-              placeholder="What's your email address?"
+              placeholder="What's your email.current address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-4">Your Message.current</span>
             <textarea
-              id="messageInput"
+              ref={message}
               rows={7}
               name="message"
               placeholder="What do you want to say?"
