@@ -9,7 +9,9 @@ import {
 
 import {
   sampleresponse,
-  homescreen
+  homescreen,
+  longresponse,
+  longresponsemobile
 } from "../assets/voicegpt";
 
 import {
@@ -110,7 +112,9 @@ const projects = [
     source_code_link: "https://github.com/beodw/voicegpt",
     carousel_images: [
         sampleresponse,
-        homescreen
+        homescreen,
+        longresponse,
+        longresponsemobile
     ],
     liveSiteLink: "https://voicegpt-qivdwzdup-beodw.vercel.app/",
   },
