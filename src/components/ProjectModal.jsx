@@ -18,6 +18,7 @@ export default function ProjectModal() {
   //     variants={fadeIn("right", "spring", 1 * 0.5, 0.75)}
   //     className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
   //   ></motion.div>
+
   return (
     <div
       className={`bg-transparent w-screen h-screen overflow-clip z-0 flex justify-center items-center`}
@@ -73,13 +74,13 @@ export default function ProjectModal() {
         <div className="mt-5">
           <h3>Project Links:</h3>
           <div className="flex">
-            {/* {appState.showCasedProject.source_code_link && (
+            {appState.showCasedProject.source_code_link && (
               <div className="flex flex-col items-start m-3 card-img_hover">
                 <div
                   onClick={() => {
                     window.open(appState.showCasedProject.source_code_link);
                   }}
-                  className="mb-2 bg-green-500 shadow-lg w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  className="mb-2 black-gradient shadow-lg w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                 >
                   <img
                     src={github}
@@ -89,7 +90,7 @@ export default function ProjectModal() {
                 </div>
                 <small>GitHub</small>
               </div>
-            )} */}
+            )}
 
             {appState.showCasedProject.liveSiteLink && (
               <div className="flex flex-col items-start m-3 card-img_hover">
@@ -97,7 +98,7 @@ export default function ProjectModal() {
                   onClick={() => {
                     window.open(appState.showCasedProject.liveSiteLink);
                   }}
-                  className="mb-2 black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                  className="mb-2 bg-white w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                 >
                   <img
                     src={website}

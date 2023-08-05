@@ -7,6 +7,10 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+const VITE_APP_EMAILJS_SERVICE_ID = "service_71mkf33"
+const VITE_APP_EMAILJS_TEMPLATE_ID = "template_1d7y7c8"
+const VITE_APP_EMAILJS_PUBLIC_KEY = "m_wNkagu-fOoykQlO"
+
 const Contact = () => {
 
   const [submittingForm, setSubmittingForm] = useState(false);
@@ -73,8 +77,8 @@ const Contact = () => {
     
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAIL.currentJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAIL.currentJS_TEMPLATE_ID,
+        VITE_APP_EMAILJS_SERVICE_ID,
+        VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: name.current.value,
           to_name: "Beod Wilson",
@@ -82,7 +86,7 @@ const Contact = () => {
           to_email: "beodwilson@gmail.com",
           message: message.current.value,
         },
-        import.meta.env.VITE_APP_EMAIL.currentJS_PUBLIC_KEY
+        VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
@@ -119,23 +123,23 @@ const Contact = () => {
               id="name"
               type="text"
               name="name"
-              placeholder="What's your full name.current?"
+              placeholder="What's your full name"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email.current</span>
+            <span className="text-white font-medium mb-4">Your Email</span>
             <input
               ref={email}
               type="email"
               name="email"
               required
-              placeholder="What's your email.current address?"
+              placeholder="What's your email address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message.current</span>
+            <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
               ref={message}
               rows={7}

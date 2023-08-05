@@ -8,6 +8,11 @@ import {
 } from "../assets/business_hub";
 
 import {
+  sampleresponse,
+  homescreen
+} from "../assets/voicegpt";
+
+import {
   LastRecharge,
   SimActivationDate,
   Success,
@@ -53,15 +58,23 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Systems Designer",
+    title: "Systems Design",
     icon: web,
   },
   {
-    title: "Frontend Engineer",
+    title: "Frontend Engineering",
     icon: mobile,
   },
   {
-    title: "Backend Engineer",
+    title: "Backend Engineering",
+    icon: backend,
+  },
+  {
+    title: "AWS Deployment",
+    icon: backend,
+  },
+  {
+    title: "Vercel Deployment",
     icon: backend,
   },
   {
@@ -71,73 +84,35 @@ const services = [
 ];
 
 const projects = [
-  {
-    name: "MTN Business Hub CMS",
+   {
+    name: "Voice Assistant",
     description:
-      "Led development and integration of RESTful API to the dashboard and manage products pages on the CMS. Liasesed with product owner and product team to understand features and implement pixel perfect UI.",
+      "Web based voice assistant that offers help on daily tasks like writing emails.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "redux",
+        name: "NextJS",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "MongoDB",
+        color: "green-text-gradient",
+      },
     ],
-    image: businessHub,
+    image: homescreen,
+    source_code_link: "https://github.com/beodw/voicegpt",
     carousel_images: [
-      businessHubAddAttribute,
-      businessHubDashboard,
-      businessHubImageUpload,
+        sampleresponse,
+        homescreen
     ],
-  },
-  {
-    name: "MTN Customer Portal",
-    description:
-      "Responsible for designing and implment payment microservice to process Visa and MasterCard payments on our platform. Liased with payment provider to understand security protocols and ensure best practices.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "redux",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: businessHub,
-    carousel_images: [],
-  },
-  {
-    name: "MTN Self Service Portal",
-    description: "Worked with UI designer to implement backend user",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "redux",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: simSwapPortal,
-    carousel_images: [LastRecharge, SimActivationDate, Success],
-    liveSiteLink: "https://internalappstest.mtn.com.gh/",
-
+    liveSiteLink: "https://voicegpt-qivdwzdup-beodw.vercel.app/",
   },
   {
     name: "Transport Management System",
@@ -145,15 +120,15 @@ const projects = [
       "Web based service that helps businesses manage their loogistic needs. From getting the right vehicle to tracking the location and status of each delivery.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "redux",
+        name: "Redux",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
       {
@@ -172,7 +147,7 @@ const projects = [
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
@@ -225,6 +200,75 @@ const projects = [
       Settings,
     ],
   },
+  {
+    name: "MTN Business Hub CMS",
+    description:
+      "Led development and integration of RESTful API to the dashboard and manage products pages on the CMS. Liasesed with product owner and product team to understand features and implement pixel perfect UI.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Redux",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: businessHub,
+    carousel_images: [
+      businessHubAddAttribute,
+      businessHubDashboard,
+      businessHubImageUpload,
+    ],
+  },
+  {
+    name: "MTN Customer Portal",
+    description:
+      "Responsible for designing and implment payment microservice to process Visa and MasterCard payments on our platform. Liased with payment provider to understand security protocols and ensure best practices.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Redux",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: businessHub,
+    carousel_images: [],
+  },
+  {
+    name: "MTN Self Service Portal",
+    description: "Worked with UI designer to implement backend user",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Redux",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: simSwapPortal,
+    carousel_images: [LastRecharge, SimActivationDate, Success],
+    liveSiteLink: "https://internalappstest.mtn.com.gh/",
+
+  },
+  
 ];
 
 export { services, projects };

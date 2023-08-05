@@ -4,6 +4,7 @@ import { PageLoader } from "./components";
 import { navigateToProjects } from "./utils/navigate";
 import { useDispatch, useSelector } from "react-redux";
 import { setScrollDistance } from "../src/redux/app/appSlice";
+import ProjectModal from "./components/ProjectModal";
 
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 const About = lazy(() => import("./components/About"));
@@ -11,7 +12,6 @@ const Contact = lazy(() => import("./components/Contact"));
 const Hero = lazy(() => import("./components/Hero"));
 const Navbar = lazy(() => import("./components/Navbar"));
 const Works = lazy(() => import("./components/Works"));
-const ProjectModal = lazy(() => import("./components/ProjectModal"));
 
 const App = () => {
   const appState = useSelector((state) => state.app);
@@ -48,7 +48,7 @@ const App = () => {
   // }, [appState.modalIsVisible]);
 
   return (
-    <Suspense fallback={<PageLoader />}>
+    <>
       {appState.modalIsVisible ? (
         <ProjectModal />
       ) : (
@@ -57,9 +57,9 @@ const App = () => {
             <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
               <Navbar />
 
-              <RenderIfVisible>
+            
                 <Hero />
-              </RenderIfVisible>
+        
             </div>
 
             <Works />
@@ -69,14 +69,14 @@ const App = () => {
             <div className="relative z-0">
               <Contact />
 
-              <RenderIfVisible>
+             
                 <StarsCanvas />
-              </RenderIfVisible>
+              
             </div>
           </div>
         </div>
       )}
-    </Suspense>
+    </>
   );
 };
 
