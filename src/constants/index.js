@@ -109,14 +109,14 @@ const projects = [
       },
     ],
     image: homescreen,
-    source_code_link: "https://github.com/beodw/voicegpt",
+    source_code_link: "https://github.com/beodw/voicegptfrontend",
     carousel_images: [
         sampleresponse,
         homescreen,
         longresponse,
         longresponsemobile
     ],
-    liveSiteLink: "https://voicegpt-qivdwzdup-beodw.vercel.app/",
+    liveSiteLink: "https://voicegptbucket.s3.eu-west-2.amazonaws.com/index.html",
   },
   {
     name: "Transport Management System",
