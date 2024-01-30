@@ -87,9 +87,9 @@ const services = [
 
 const projects = [
    {
-    name: "Voice Assistant",
+    name: "MultiModal LLM",
     description:
-      "Web based voice assistant that offers help on daily tasks like writing emails.",
+      "Web based interface that offers a way to interact with llm's using voice. Other modalities coming soon.",
     tags: [
       {
         name: "React",
